@@ -1,0 +1,10 @@
+<% include ./partials/header %>
+<h1>Blog Page</h1>
+<% blogs.forEach(function(blog){ %>
+	<div><h2><%= blog.title %></h2></div>
+	<div><img src = "<%= blog.link %>"></div>
+	<span><%= blog.created %></span>
+	<p><%- blog.desc.substring(0,100) %>...</p>
+	<button class="ui floated violet basic button"><a href="/blogs/<%= blog._id %>">Read More<i class="right chevron icon"></i></a></button>
+<% }) %>
+<% include ./partials/footer %>
